@@ -1,20 +1,28 @@
+# -*- coding: UTF-8 -*-
+"""PyPoll Homework Challenge Solution ."""
+
 # Add our dependencies.
 import csv
 import os
 
+#$## Add a variable to load a file from a path.
+#$##file_to_load = os.path.join("..", "Resources", "election_results.csv")
+##$## Add a variable to save the file to a path.
+#$##file_to_save = os.path.join("analysis", "election_analysis.txt")
 
-#Creating a path through the os library
-abs_filepath=r"C:\Users\ISayeed\DataCamp\Python\ModuleAssignments\Election-Analysis\Resources"
-script_wd=os.path.dirname(os.path.abspath(__file__))
+##Creating a path through the os library
+My_filepath=r"C:\Users\ISayeed\DataCamp\Python\ModuleAssignments\Election-Analysis\Resources"
+myfolder=os.path.dirname(os.path.abspath(__file__))
 file_name="election_results.csv"
 intermediate="Resources"
 file_name_analysis="election_analysis.txt"
 intermediate2="analysis"
-#Assign a variable to load elections_results file and the path
-file_to_load=os.path.join(script_wd,intermediate,file_name)
+#$##Assign a variable to load elections_results file and the path
+file_to_load=os.path.join(myfolder,intermediate,file_name)
 
-#Assign a variable to save the analysis file to a path.
-file_to_save=os.path.join(script_wd,intermediate2,file_name_analysis)
+#$##Assign a variable to save the analysis file to a path.
+file_to_save=os.path.join(myfolder,intermediate2,file_name_analysis)
+
 
 # Initialize a total vote counter.
 total_votes = 0
@@ -35,20 +43,20 @@ winning_count = 0
 winning_percentage = 0
 
 # 2:  Track the largest county and county voter turnout.
-winning_county=""
+winning_county="none"
 winning_county_count=0
 winning_county_percentage=0
 
-
-
-
+# Read the csv and convert it into a list of dictionaries
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
-    file_reader = csv.reader(election_data)
+    reader = csv.reader(election_data)
+    
     # Read the header row.
-    headers = next(file_reader)
-    # Print each row in the CSV file.
-    for row in file_reader:
+    headers = next(reader)
+    
+    # For each row in the CSV file.
+    for row in reader:
         # Add to the total vote count.
         total_votes += 1
 
@@ -62,26 +70,30 @@ with open(file_to_load) as election_data:
         # If the candidate does not match any existing candidate, add the
         # the candidate list.
         if candidate_name not in candidate_options:
+            
             # Add the candidate name to the candidate list.
             candidate_options.append(candidate_name)
+            
             # And begin tracking that candidate's voter count.
             candidate_votes[candidate_name] = 0
+        
         # Add a vote to that candidate's count.
         candidate_votes[candidate_name] += 1
 
-        # 4A:  Write an if statement that checks that the county does not match any existing county in the county list.
+        # 4A:  Write an if statement that checks that the 
+        # county does not match any existing county in the county list.
         if county_name not in county_list:
        
-            # 4B:  Add the existing county to the list of counties. 
+        # 4B:  Add the existing county to the list of counties. 
             county_list.append(county_name)
 
 
-            # 4C:  Begin tracking the county's vote count.
+        # 4C:  Begin tracking the county's vote count.
             county_votes[county_name] = 0
 
         if county_name in county_list:
 
-            # 5: Add a vote to that county's vote count.
+        # 5: Add a vote to that county's vote count.
             county_votes[county_name] += 1
        
 
@@ -143,7 +155,6 @@ with open(file_to_save, "w") as txt_file:
     txt_file.write(winning_county_summary)
 
 
-    
     # Save the final candidate vote to the text file.
     for candidate_name in candidate_votes:
         # Retrieve vote count and percentage.
@@ -173,3 +184,36 @@ with open(file_to_save, "w") as txt_file:
     print(winning_candidate_summary)
     # Save the winning candidate's results to the text file.
     txt_file.write(winning_candidate_summary)
+    
+#*********** Coding Result: *******
+# """     Election Results
+# -------------------------
+# Total Votes: 369,711
+# -------------------------
+
+# County Votes:
+# Jefferson: 10.5% (38,855)
+
+# Denver: 82.8% (306,055)
+
+# Arapahoe: 6.7% (24,801)
+
+
+# -----------------------------
+# Largest County Turnout: Denver
+# -----------------------------
+
+# Charles Casper Stockham: 23.0% (85,213)
+
+# Diana DeGette: 73.8% (272,892)
+
+# Raymon Anthony Doane: 3.1% (11,606)
+
+
+# -------------------------
+# Winner: Diana DeGette
+# Winning Vote Count: 272,892
+# Winning Percentage: 73.8%
+# -------------------------
+
+# PS C:\Users\ISayeed\DataCamp\Python\ModuleAssignments\Election-Analysis>  """
