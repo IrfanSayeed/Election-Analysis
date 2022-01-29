@@ -2,7 +2,7 @@
 # **Election_Analysis**
 
 ## **Overview of Election Audit Analysis: **
-### *To obtain detail of election result for each county and candidate included with summary of largest county *
+### >To obtain detail of election result for each county and candidate included with summary of largest county
 ## ** Election Audit Results: **
 1. How many votes were cast in this congressional election?
 2. Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
