@@ -33,4 +33,4 @@
 https://github.com/IrfanSayeed/Election-Analysis/blob/main/Result.PNG
 
 ### Text File Locatoin: 
-
+https://github.com/IrfanSayeed/Election-Analysis/blob/main/analysis/election_analysis.txt
