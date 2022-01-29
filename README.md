@@ -2,7 +2,7 @@
 # **Election_Analysis**
 
 ## **Overview of Election Audit Analysis: **
-### >To obtain detail of election result for each county and candidate included with summary of largest county
+### >To obtain detail of election result for each county and candidate included with summary of largest county. Also suggest simplify coding and make it user friendly.
 ## ** Election Audit Results: **
 1. How many votes were cast in this congressional election?
 2. Provide a breakdown of the number of votes and the percentage of total votes for each county in the precinct.
@@ -23,7 +23,8 @@
       - Raymon Anthony Doane with 11,606 votes representing 3.1% of the total votes cast 
   - The **winner of the election was Diana DeGette**, winning with 272,892 votes representing 73.8% of the total votes cast
 
-## **Election-Audit Summary: **
+## **Election-Audit Summary: (Suggestions)**
+
 - Simplify the script, use nested IF() if and For loop instead of repetitive codes and several For and If statements
 - Combine print commands for candidates and counties into 1 statement.
 - Let user to select county and/or candidate to see election result outcome
