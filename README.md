@@ -10,7 +10,7 @@
 4. Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
 5. Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
 
-> The analysis of the election showed that: 
+### > The analysis of the election showed that: 
  -**Total votes cast** in the congressional election was **369,711**
  - Vote breakdown of each county in the precinct is as follows: 
 
